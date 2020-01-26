@@ -1,0 +1,2 @@
+# sparc
+my sparc application
