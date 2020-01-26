@@ -1,0 +1,164 @@
+\documentclass[12pt,letter]{article}
+\usepackage[margin=1in]{geometry}
+
+
+\title{My SPARC Application: Technical Question Portion}
+\author{Simon Wu}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{The Question}
+
+I have decided to attempt to answer Question 1A, where the goal is to maximize $\Delta$,
+the difference of the end temperatures of the blue and red blocks ($B - R$), after
+any number of operations on the 2 blocks. 
+Maximizing $\Delta$ is going to require maximizing B and minimizing R.
+
+
+\section{My Solution}
+
+\subsection{Assumptions and Given Information}
+
+Question 1A provides the following information:
+\begin{enumerate}
+    \item There are 2 blocks, Blue and Red, with temperatures of $B$ and $R$ 
+    respectively, each weighing 1 kilogram.
+    \item $B$ begins at $0^{\circ}$C initially and $R$ begins at $100^{\circ}$C
+    initially.
+    \item Blue and Red possess perfect heat conductivity, and heat equilibrates
+    immediately between any chunks of block in contact with each other, based
+    on mass.
+    \item Each block can be manipulated cut without any heat loss.
+\end{enumerate}
+
+For the purposes of my solution, we will also assume that Blue and Red are within
+an isolated system where no matter or energy can be exhanged with surroundings.
+
+\subsection{The Solution}
+
+The maximum value of $\Delta$ must be 0, with $B = R$ at the end. This can be 
+achieved by touching both blocks together at the beginning and allowing their 
+temperatures to equilibrate to $50^{\circ}$C, thus achieving $\Delta$ of 0.
+
+\pagebreak
+
+\subsubsection{Justifications}
+
+Entropy is calculated as heat (energy) absorbed or released by a system or 
+surroundings divided by the temperature of the system or surroundings, and is
+expressed in Joules per Kelvin ($J/K$).
+
+\bigskip
+
+{\centering
+    $\Delta S = Q / T$\par
+}
+
+\bigskip
+
+The second law of thermodynamics states that the total entropy of an isolated
+system (which we assume is what our blocks are in) can never decrease, and will
+remain constant only in reversible processes. 
+In any other cases, for example with transferring heat between 2 blocks by contact,
+total entropy must always increase.
+The second law of thermodynamics can be stated as:
+
+\bigskip
+
+{\centering
+    $\Delta S_{universe} = \Delta S_{system} + \Delta S_{surroundings} > 0$\par
+}
+
+\bigskip
+
+The second law explains why heat cannot flow from a colder to hotter system cannot
+occur without external work. 
+For example, if I have 2 blocks named A and B, with A at $10^{\circ}$C and B at
+$0^{\circ}$C, and I allow them to make contact, what happens to entropy when some 
+energy, say 10 joules, flows from A to B (hot to cold) vs B to A (cold to hot)?
+
+\bigskip
+
+{\centering
+    $T_{A}=10^{\circ}$C, $T_{B}=0^{\circ}$C
+    
+    \bigskip
+
+    $T_{A}=283^{\circ}$K, $T_{B}=273^{\circ}$K
+
+}
+
+\bigskip
+
+\emph{Scenario 1: 10 joules flows from B to A}
+
+\bigskip
+
+{\centering
+    $Q_A = 10$ J, $Q_B = -10$ J
+
+    \bigskip
+
+    $\Delta S = Q_A/T_A + Q_B/T_B$
+
+    \bigskip
+
+    $\Delta S = 10/283 - 10/273$
+
+    \bigskip
+
+    $\Delta S = -0.00129\ J/K$ 
+
+}
+
+\bigskip
+
+This is impossible: entropy can never decrease in an isolated system without external 
+work.
+
+\bigskip
+
+\emph{Scenario 2: 5 joules flows from A to B}
+
+\bigskip
+
+{\centering
+    $Q_A = -10$ J, $Q_B = 10$ J
+
+    \bigskip
+
+    $\Delta S = Q_A/T_A + Q_B/T_B$
+
+    \bigskip
+
+    $\Delta S = -10/283 + 10/273$
+
+    \bigskip
+
+    $\Delta S = 0.00129\ J/K$ 
+
+}
+
+\bigskip
+
+This is possible, as it does not break the second law of thermodynamics.
+
+\bigskip
+
+Why is this relevant to Question 1A?
+The second law dictates how heat can flow between objects.
+Because entropy always increases in an isolated system and never decreases, we can
+start to make some judgements on what the bounds of the end temperatures of B and R
+are going to be.
+
+\pagebreak
+
+Because of the situation I described earlier, no heat will be able to flow from B
+to R, as B starts colder than R, therefore the minimum temperature of B is $0^{\circ}$C
+and the maximum temperature of R is $100^{\circ}$C.
+Additionally, because of that same 
+
+
+\end{document}
